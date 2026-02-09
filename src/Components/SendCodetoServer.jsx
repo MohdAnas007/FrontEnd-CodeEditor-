@@ -5,7 +5,7 @@ export const SendCodeToServer = async (code, input, language) => {
     try {
        
       console.log(code,language);
-        const datafromBackend = await axios.post(API_BASE + '/api/runcode', { code, input, language });
+        const datafromBackend = await axios.post(`${API_BASE}/api/runcode`, { code, input, language });
         console.log("datafromBackend");
         return datafromBackend.data;
 
