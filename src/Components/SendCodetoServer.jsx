@@ -4,9 +4,10 @@ export const SendCodeToServer = async (code, input, language) => {
 
     try {
        
+        console.log("API_BASE:", process.env.REACT_APP_API_BASE);
+
        
         const datafromBackend = await axios.post(`${API_BASE}/api/runcode`, { code, input, language });
-        console.log("API_BASE:", process.env.REACT_APP_API_BASE);
 
         return datafromBackend.data;
 
